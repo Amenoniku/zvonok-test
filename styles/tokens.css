@@ -1,0 +1,33 @@
+:root {
+  /* Fonts */
+  --font-primary: 'Geologica', sans-serif;
+  --font-weight-light: 400;
+  --font-weight-regular: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-size-small: 18px;
+  --font-size-medium: 22px;
+  --font-size-large: 26px;
+  --font-size-xlarge: 30px;
+  --font-size-xxlarge: 36px;
+  --font-size-xxxlarge: 48px;
+  --font-size-xxxxlarge: 100px;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 10px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 56px;
+
+  /* Border Radius */
+  --border-radius-sm: 8px;
+  --border-radius-md: 100px;
+
+  /* Shadows */
+  --shadow-sm: 0px 1px 0px 0px rgba(233, 233, 243, 0.2);
+  --shadow-md: 0px 0px 1px rgba(233, 233, 243, 0.1);
+  --shadow-lg: 0px 0px 1px rgba(255, 255, 255, 1);
+}

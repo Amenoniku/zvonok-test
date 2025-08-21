@@ -1,0 +1,29 @@
+:root {
+  /* Colors */
+  --primary-color: #052652;
+  --secondary-color: #2d9cdb;
+  --background-gradient: linear-gradient(135deg, rgba(5, 38, 82, 1) 0%, rgba(45, 156, 219, 1) 100%);
+  --text-color: #fff;
+  --text-secondary-color: rgba(255, 255, 255, 0.4);
+  --text-tertiary-color: rgba(233, 233, 243, 0.6);
+  --card-background: rgba(233, 233, 243, 0.1);
+  --card-border: rgba(233, 233, 243, 0.2);
+  --active-tab: rgba(233, 233, 243, 0.2);
+  --inactive-tab: #1a669c;
+  --popular-city-card-background: rgba(255, 255, 255, 0.2);
+  --popular-city-card-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Базовые глобальные применения */
+html,
+body {
+  background: var(--background-gradient);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
