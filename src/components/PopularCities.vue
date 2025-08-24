@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const props = defineProps<{
+import Icon from '@/components/Icon.vue'
+import { getWeatherIcon } from '@/utils/getWeatherIcon'
+defineProps<{
   cities: Array<{
     name: string
     temperature: number
@@ -9,49 +9,23 @@ const props = defineProps<{
     humidity: number
   }>
 }>()
-
-// Weather icons mapping
-const getWeatherIcon = (condition: string) => {
-  switch (condition) {
-    case 'Солнечно':
-      return '☀️'
-    case 'Облачно':
-      return '☁️'
-    case 'Дождливо':
-      return '🌧️'
-    case 'Ветренно':
-      return '💨'
-    default:
-      return '☁️'
-  }
-}
 </script>
 
 <template>
   <div class="popular-cities">
     <div class="section-header">
       <h2 class="section-title">Погода в популярных городах</h2>
-      <div class="info-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M9 12V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M9 6H9.0075" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+      <Icon name="question" size="md" />
     </div>
 
     <div class="cities-grid">
-      <div
-        v-for="(city, index) in cities"
-        :key="index"
-        class="city-card"
-      >
+      <div v-for="(city, index) in cities" :key="index" class="city-card">
         <div class="city-info">
           <h3 class="city-name">{{ city.name }}</h3>
           <p class="city-condition">{{ city.condition }}</p>
         </div>
         <div class="city-weather">
-          <div class="weather-icon">{{ getWeatherIcon(city.condition) }}</div>
+          <Icon :name="getWeatherIcon(city.condition)" size="lg" />
           <div class="temperature">{{ city.temperature }}°</div>
         </div>
         <p class="city-humidity">Влажность: {{ city.humidity }}%</p>
@@ -70,7 +44,7 @@ const getWeatherIcon = (condition: string) => {
 .section-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
 }
 
 .section-title {
@@ -87,7 +61,6 @@ const getWeatherIcon = (condition: string) => {
 
 .cities-grid {
   display: flex;
-  justify-content: flex-end;
   gap: var(--spacing-xl);
   flex-wrap: wrap;
 }
@@ -96,7 +69,7 @@ const getWeatherIcon = (condition: string) => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
   background: var(--popular-city-card-background);
   border: 1px solid var(--popular-city-card-border);
   border-radius: var(--border-radius-sm);
@@ -129,6 +102,7 @@ const getWeatherIcon = (condition: string) => {
 
 .city-weather {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: var(--spacing-md);
 }

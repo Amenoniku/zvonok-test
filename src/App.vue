@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Header from './components/Header.vue'
+import Header from './components/WeatherHeader.vue'
 import WeatherDisplay from './components/WeatherDisplay.vue'
 import PopularCities from './components/PopularCities.vue'
 import CitySelector from './components/CitySelector.vue'
@@ -61,6 +61,57 @@ const weatherData = {
       humidity: 85,
     },
   ],
+  weekly: [
+    {
+      day: 'Понедельник',
+      temperature: 34,
+      condition: 'Облачно',
+      wind: 1,
+      humidity: 85,
+    },
+    {
+      day: 'Вторник',
+      temperature: 34,
+      condition: 'Дождливо',
+      wind: 1,
+      humidity: 85,
+    },
+    {
+      day: 'Среда',
+      temperature: 34,
+      condition: 'Облачно',
+      wind: 1,
+      humidity: 85,
+    },
+    {
+      day: 'Четверг',
+      temperature: 34,
+      condition: 'Дождливо',
+      wind: 1,
+      humidity: 85,
+    },
+    {
+      day: 'Пятница',
+      temperature: 34,
+      condition: 'Облачно',
+      wind: 1,
+      humidity: 85,
+    },
+    {
+      day: 'Суббота',
+      temperature: 34,
+      condition: 'Дождливо',
+      wind: 1,
+      humidity: 85,
+    },
+    {
+      day: 'Воскресенье',
+      temperature: 34,
+      condition: 'Облачно',
+      wind: 1,
+      humidity: 85,
+    },
+  ],
   popularCities: [
     { name: 'Москва', temperature: 34, condition: 'Облачно', humidity: 80 },
     { name: 'Новосибирск', temperature: 34, condition: 'Солнечно', humidity: 80 },
@@ -94,6 +145,7 @@ const weatherData = {
   background: var(--background-gradient);
   color: var(--text-color);
   font-family: var(--font-primary);
+  min-width: fit-content;
 }
 
 .main-content {
